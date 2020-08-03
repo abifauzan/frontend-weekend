@@ -1,25 +1,23 @@
 <!-- Navigation-->
 <app-header></app-header>
 
-<!-- Full Page Image Header with Vertically Centered Content -->
+<!-- Header section -->
 <header>
   <div class="header-container">
-    <!-- <div class="container"> -->
-      <div class="row" data-aos="fade-down" data-aos-duration="2000">
-        <div class="col-12 text-center">
-          <h1 class="hero-heading">Weekend From Home</h1>
-          <p class="hero-subheading">Stay active with a little workout.</p>
-          <img src="assets/images/lego-bitmap.png"
-                srcset="assets/images/lego-bitmap@2x.png 2x,
-                        assets/images/lego-bitmap@3x.png 3x"
-                class="bitmap-hero">
-
-          <button (click)="scrollToElement(blockquoteSection)" class="button btn-rounded btn-hero btn-hero-effect">Let's Go </button>
-        </div>
+    <div class="row" data-aos="fade-down" data-aos-duration="2000">
+      <div class="col-12 text-center">
+        <h1 class="hero-heading">Weekend From Home</h1>
+        <p class="hero-subheading">Stay active with a little workout.</p>
+        <img src="assets/images/lego-bitmap.png"
+              srcset="assets/images/lego-bitmap@2x.png 2x,
+                      assets/images/lego-bitmap@3x.png 3x"
+              class="bitmap-hero">
+        <button (click)="scrollToElement(blockquoteSection)" class="button btn-rounded btn-hero btn-hero-effect">Let's Go </button>
       </div>
-    <!-- </div> -->
+    </div>
   </div>
 </header>
+<!-- end Header section -->
 
 <!-- Page Quotes -->
 <section class="quotes-section" #blockquoteSection>
@@ -60,72 +58,78 @@
     </div>
   </div>
 </section>
+<!-- end Page Quotes -->
 
 <!-- Dark Section -->
 <section class="dark-section">
-  <!-- <div class="d-flex flex-column"> -->
-    <div class="container container-box">
-      <div class="box-body" data-aos="fade-right" data-aos-duration="1500">
-        <h2 class="box-title">POV</h2>
-        <p>
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
-          incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud
-          ullamco laboris nisi ea commodo consequat. Duis aute irure dolor in reprehenderit
-          in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
-        </p>
-      </div>
-      <div class="box-body" data-aos="fade-left" data-aos-duration="1500">
-        <h2 class="box-title">Resource</h2>
-        <p>
-          These cases are perfectly simple and easy to distinguish. In a free hour, when our power
-          of choice is untrammelled and when nothing prevents our being able to do what we like
-          best
-        </p>
-      </div>
-      <div class="box-body mt-5" data-aos="fade-right" data-aos-duration="1500">
-        <h2 class="box-title">Help & Tips</h2>
+  <!-- Box 1 -->
+  <div class="container container-box">
+    <div class="box-body" data-aos="fade-right" data-aos-duration="1500">
+      <h2 class="box-title">POV</h2>
+      <p>
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
+        incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud
+        ullamco laboris nisi ea commodo consequat. Duis aute irure dolor in reprehenderit
+        in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
+      </p>
+    </div>
+    <div class="box-body" data-aos="fade-left" data-aos-duration="1500">
+      <h2 class="box-title">Resource</h2>
+      <p>
+        These cases are perfectly simple and easy to distinguish. In a free hour, when our power
+        of choice is untrammelled and when nothing prevents our being able to do what we like
+        best
+      </p>
+    </div>
+    <div class="box-body mt-5" data-aos="fade-right" data-aos-duration="1500">
+      <h2 class="box-title">Help & Tips</h2>
+    </div>
+  </div>
+  <!-- End Box 1 -->
+
+  <!-- Box 2 -->
+  <div class="container-tips" data-aos="fade-right" data-aos-duration="1500">
+    <div class="path-3">
+      <img src="assets/images/path-3.svg" alt="">
+    </div>
+
+    <div class="card card-tips" *ngFor="let tips of dataHelpTips$ | async">
+      <!-- Card image -->
+      <img class="card-thumbnail" [src]="tips.image" alt="{{ tips.title }}">
+
+      <!-- Card content -->
+      <div class="d-flex">
+          <div class="card-body">
+            <p class="flex-grow-1 m-0">{{ tips.title }}</p>
+            <button class="btn btn-circle btn-tips">
+              <i class="fa fa-arrow-right"></i>
+            </button>
+          </div>
       </div>
     </div>
 
-    <div class="container-tips" data-aos="fade-right" data-aos-duration="1500">
-      <div class="path-3">
-        <img src="assets/images/path-3.svg" alt="">
-      </div>
+  </div>
+  <!-- end Box 2 -->
 
-      <div class="card card-tips" *ngFor="let tips of dataHelpTips$ | async">
-        <!-- Card image -->
-        <img class="card-thumbnail" [src]="tips.image" alt="{{ tips.title }}">
-
-        <!-- Card content -->
-        <div class="d-flex">
-            <div class="card-body">
-              <p class="flex-grow-1 m-0">{{ tips.title }}</p>
-              <button class="btn btn-circle btn-tips">
-                <i class="fa fa-arrow-right"></i>
-              </button>
-            </div>
-        </div>
-      </div>
-
+  <!-- Box 3 -->
+  <div class="container container-box">
+    <div id="triggerLegoOnLeft" class="box-body last-dark-box" data-aos="fade-up" data-aos-duration="1500">
+      <h2 class="box-title">You're all set.</h2>
+      <p>
+        The wise man therefore always holds in these matters to this principle of selection.
+      </p>
     </div>
+  </div>
+  <!-- end Box 3 -->
 
-    <div class="container container-box">
-      <div id="triggerLegoOnLeft" class="box-body last-dark-box" data-aos="fade-up" data-aos-duration="1500">
-        <h2 class="box-title">You're all set.</h2>
-        <p>
-          The wise man therefore always holds in these matters to this principle of selection.
-        </p>
-      </div>
-    </div>
-
-
-    <div class="bitmap-lego-rotate">
-      <img src="assets/images/lego-3.png"
-            srcset="assets/images/lego-3@2x.png 2x,
-                    assets/images/lego-3@3x.png 3x">
-    </div>
+  <div class="bitmap-lego-rotate">
+    <img src="assets/images/lego-3.png"
+          srcset="assets/images/lego-3@2x.png 2x,
+                  assets/images/lego-3@3x.png 3x">
+  </div>
 
 </section>
+<!-- end Dark Section -->
 
 <app-footer></app-footer>
 
