@@ -79,4 +79,8 @@ export class HomeComponent implements OnInit {
     ) as Observable<Testimonial[]>;
   }
 
+  scrollToElement($element): void {
+    $element.scrollIntoView({behavior: 'smooth', block: 'start', inline: 'nearest'});
+  }
+
 }

@@ -11,12 +11,16 @@ import { CarouselModule } from 'ngx-owl-carousel-o';
 import { environment } from '../environments/environment';
 import { HomeComponent } from './components/home/home.component';
 import { NotFoundComponent } from './components/not-found/not-found.component';
+import { HeaderComponent } from './components/_partials/header/header.component';
+import { FooterComponent } from './components/_partials/footer/footer.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     HomeComponent,
-    NotFoundComponent
+    NotFoundComponent,
+    HeaderComponent,
+    FooterComponent
   ],
   imports: [
     BrowserModule,
