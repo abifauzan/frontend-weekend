@@ -1,0 +1,145 @@
+<!-- Navigation-->
+<nav class="navbar navbar-expand-sm navbar-light bg-light navbar-custom" id="mainNav">
+  <div class="container">
+    <img src="assets/images/logo-bitmap.jpg"
+          srcset="assets/images/logo-bitmap@2x.jpg 2x,
+                  assets/images/logo-bitmap@3x.jpg 3x"
+          class="bitmap-logo">
+        <div class="flex-fill title">
+          <div class="navbar-title">Good Morning <br><strong class="navbar-subtitle">Fellas</strong></div>
+        </div>
+  </div>
+</nav>
+
+<!-- Full Page Image Header with Vertically Centered Content -->
+<header>
+  <div class="header-container">
+    <!-- <div class="container"> -->
+      <div class="row" data-aos="fade-down" data-aos-duration="2000">
+        <div class="col-12 text-center">
+          <h1 class="hero-heading">Weekend From Home</h1>
+          <p class="hero-subheading">Stay active with a little workout.</p>
+          <img src="assets/images/lego-bitmap.png"
+                srcset="assets/images/lego-bitmap@2x.png 2x,
+                        assets/images/lego-bitmap@3x.png 3x"
+                class="bitmap-hero">
+
+          <button class="button btn-rounded btn-hero btn-hero-effect">Let's Go </button>
+        </div>
+      </div>
+    <!-- </div> -->
+  </div>
+</header>
+
+<!-- Page Quotes -->
+<section class="quotes-section">
+  <div class="d-flex align-items-end flex-column">
+    <img src="assets/images/lego-rotate.png" class="img-lego-rotate" data-aos="fade-left" >
+  </div>
+  <div class="d-flex flex-column">
+    <div class="d-flex justify-content-center content-text">
+      <blockquote id="triggerLegoOnRight" class="blockquote-content text-right" data-aos="zoom-in">
+        <p class="mb-4">
+          <span class="text-blue">Deffinition;</span>
+          a practice or exercise to test or improve one's
+          fitness for athletic competition, ability, or performance to
+          exhaust (something, such as a mine) by working to devise,
+          arrange, or achieve by resolving difficulties. MerriamWebster.com
+          Dictionary.
+        </p>
+        <footer class="blockquote-footer"><cite title="Source Title">weekend team</cite></footer>
+      </blockquote>
+    </div>
+
+    <div class="container testimonials">
+      <div class="circle"></div>
+      <h2 class="text-white text-center testimonials-title m-0">Testimonial</h2>
+
+        <div class="container-slide" data-aos="fade-left" data-aos-duration="1500">
+          <owl-carousel-o [options]="sliderOptions">
+            <ng-template carouselSlide *ngFor="let data of dataTestimonials$ | async">
+              <div class="box-slider">
+                <h1 class="title-slider m-0">{{ data.by }}</h1>
+                <p class="content-slider m-0">
+                  {{ data.testimony }}
+                </p>
+              </div>
+            </ng-template>
+          </owl-carousel-o>
+        </div>
+    </div>
+  </div>
+</section>
+
+<!-- Dark Section -->
+<section class="dark-section">
+  <!-- <div class="d-flex flex-column"> -->
+    <div class="container container-box">
+      <div class="box-body" data-aos="fade-right" data-aos-duration="1500">
+        <h2 class="box-title">POV</h2>
+        <p>
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
+          incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud
+          ullamco laboris nisi ea commodo consequat. Duis aute irure dolor in reprehenderit
+          in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
+        </p>
+      </div>
+      <div class="box-body" data-aos="fade-left" data-aos-duration="1500">
+        <h2 class="box-title">Resource</h2>
+        <p>
+          These cases are perfectly simple and easy to distinguish. In a free hour, when our power
+          of choice is untrammelled and when nothing prevents our being able to do what we like
+          best
+        </p>
+      </div>
+      <div class="box-body mt-5" data-aos="fade-right" data-aos-duration="1500">
+        <h2 class="box-title">Help & Tips</h2>
+      </div>
+    </div>
+
+    <div class="container-tips" data-aos="fade-right" data-aos-duration="1500">
+      <div class="path-3">
+        <img src="assets/images/path-3.svg" alt="">
+      </div>
+
+      <div class="card card-tips" *ngFor="let tips of dataHelpTips$ | async">
+        <!-- Card image -->
+        <img class="card-thumbnail" [src]="tips.image" alt="{{ tips.title }}">
+
+        <!-- Card content -->
+        <div class="d-flex">
+            <div class="card-body">
+              <p class="flex-grow-1 m-0">{{ tips.title }}</p>
+              <button class="btn btn-circle btn-tips">
+                <i class="fa fa-arrow-right"></i>
+              </button>
+            </div>
+        </div>
+      </div>
+
+    </div>
+
+    <div class="container container-box">
+      <div id="triggerLegoOnLeft" class="box-body last-dark-box" data-aos="fade-up" data-aos-duration="1500">
+        <h2 class="box-title">You're all set.</h2>
+        <p>
+          The wise man therefore always holds in these matters to this principle of selection.
+        </p>
+      </div>
+    </div>
+
+
+    <div class="bitmap-lego-rotate">
+      <img src="assets/images/lego-3.png"
+            srcset="assets/images/lego-3@2x.png 2x,
+                    assets/images/lego-3@3x.png 3x">
+    </div>
+
+</section>
+
+<footer class="footer">
+  <div class="d-flex container">
+    <p class="mr-auto m-0"><strong>wknd@</strong>2020</p>
+    <p class="version-info">alpha version 0.1</p>
+  </div>
+</footer>

@@ -1,0 +1,33 @@
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+  font-family: $font-family-sans-serif;
+  line-height: 1.15;
+  overflow-x: hidden;
+  -webkit-text-size-adjust: 100%;
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+}
+
+
+body {
+  margin: 0;
+  font-family: $font-family-sans-serif;
+  font-size: 1rem;
+  overflow-x: hidden;
+}
+
+button.active.focus, button.active:focus, button.focus, button:active.focus, button:active:focus, button:focus {
+  outline: 0;
+}
+
+button.active.focus, button.active:focus, button.focus, button:active.focus, button:active:focus, button:focus {
+  outline: 0;
+}
+
+.card {
+  border: none;
+}
