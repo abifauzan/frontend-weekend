@@ -197,6 +197,7 @@
     z-index: 2;
     box-sizing: border-box;
     overflow: hidden;
+    cursor: pointer;
 
     .card-thumbnail {
       // @include img(100%, 100%);

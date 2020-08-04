@@ -18,6 +18,8 @@ export class HomeComponent implements OnInit {
   dataHelpTips$: Observable<HelpTips[]>;
   dataTestimonials$: Observable<Testimonial[]>;
 
+  showDialog = false;
+
   sliderOptions: OwlOptions = {
     // stagePadding: 50,
     // loop: true,

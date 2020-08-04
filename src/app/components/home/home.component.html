@@ -12,7 +12,9 @@
               srcset="assets/images/lego-bitmap@2x.png 2x,
                       assets/images/lego-bitmap@3x.png 3x"
               class="bitmap-hero">
-        <button (click)="scrollToElement(blockquoteSection)" class="button btn-rounded btn-hero btn-hero-effect">Let's Go </button>
+        <button
+          (click)="scrollToElement(blockquoteSection)"
+          class="button btn-rounded btn-hero btn-hero-effect">Let's Go </button>
       </div>
     </div>
   </div>
@@ -93,9 +95,15 @@
       <img src="assets/images/path-3.svg" alt="">
     </div>
 
-    <div class="card card-tips" *ngFor="let tips of dataHelpTips$ | async">
+    <div
+      class="card card-tips"
+      *ngFor="let tips of dataHelpTips$ | async"
+      (click)="showDialog = !showDialog">
       <!-- Card image -->
-      <img class="card-thumbnail" [src]="tips.image" alt="{{ tips.title }}">
+      <img
+        class="card-thumbnail"
+        [src]="tips.image"
+        alt="{{ tips.title }}">
 
       <!-- Card content -->
       <div class="d-flex">
@@ -132,4 +140,10 @@
 <!-- end Dark Section -->
 
 <app-footer></app-footer>
+
+<!-- Magic dialog -->
+<app-dialog [(visible)]="showDialog">
+	<p class="pb-2">Magic happens!</p>
+	<button (click)="showDialog = !showDialog" class="btn-dialog">Close</button>
+</app-dialog>
 
