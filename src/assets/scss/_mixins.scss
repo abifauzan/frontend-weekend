@@ -62,7 +62,7 @@
 
 @mixin hero-header {
   .header-container {
-    height: 103vh;
+    height: auto;
     padding: 190px 0 0;
     background-image: url('/assets/images/bg-1.svg');
     background-size: cover;
