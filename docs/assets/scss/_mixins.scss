@@ -1,0 +1,261 @@
+@mixin layout($width, $height: auto) {
+  max-width: $width;
+  max-height: $height;
+}
+
+@mixin transform($value) {
+  -webkit-transform: $value;
+  -moz-transform: $value;
+  -ms-transform: $value;
+  transform: $value;
+}
+
+@mixin transition($value) {
+  -webkit-transition: $value;
+  -moz-transition: $value;
+  -ms-transition: $value;
+  transition: $value;
+}
+
+@mixin box-shadow($value) {
+  box-shadow: $value;
+  -webkit-box-shadow: $value;
+  -moz-box-shadow: $value;
+  -ms-box-shadow: $value;
+}
+
+@mixin hyphens($value) {
+  -webkit-hyphens: $value;
+  -moz-hyphens: $value;
+  -ms-hyphens: $value;
+  hyphens: $value;
+}
+
+@mixin text-shadow($value) {
+  -webkit-text-shadow: $value;
+  -moz-text-shadow: $value;
+  -ms-text-shadow: $value;
+  text-shadow: $value;
+}
+
+@mixin img($width, $height: auto) {
+  width: $width;
+  height: $height;
+  @extend .image;
+}
+
+@mixin btn-rounded {
+  @extend .button;
+  font-size: large;
+  letter-spacing: 1px;
+  border-radius: 40px;
+}
+
+@mixin btn-circle {
+  @extend .button;
+  display: block;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  text-align: center;
+}
+
+@mixin hero-header {
+  .header-container {
+    height: 103vh;
+    padding: 190px 0 0;
+    background-image: url('/assets/images/bg-1.svg');
+    background-size: cover;
+    background-position: top;
+    background-repeat: no-repeat;
+    @include transform(translateY(-90px));
+    color: $white;
+  }
+
+  .hero-heading {
+    font-size: $hero-heading;
+    text-transform: uppercase;
+    font-weight: 900 !important;
+    font-stretch: normal;
+    font-weight: bold;
+    line-height: 0.82;
+    letter-spacing: 2px;
+    text-align: center;
+    color: $white;
+  }
+
+  .hero-subheading {
+    font-size: $hero-subheading;
+    font-weight: 500;
+    padding: 1.1rem;
+    font-stretch: normal;
+    font-style: italic;
+    line-height: normal;
+    letter-spacing: 1px;
+    text-align: center;
+    color: $white;
+  }
+
+  .bitmap-hero {
+    @include img(220px, auto);
+    @extend .image;
+    margin-top: 45px;
+    position: relative;
+  }
+
+  .btn-rounded {
+    @include btn-rounded();
+    background: $white;
+  }
+
+  .btn-hero {
+    padding: 20px 100px;
+    position: absolute;
+    top: 428px;
+    /* left: 50; */
+    margin-left: auto;
+    margin-right: auto;
+    left: 0;
+    right: 0;
+    text-align: center;
+    overflow: hidden;
+    border: 3px solid transparent;
+    @include box-shadow(0px 15px 55px 0px rgba(249,131,171,0.82));
+
+    &:hover {
+      color: $pink;
+      border: 3px solid $pinky;
+    }
+
+    &:active {
+      @include box-shadow(0px 14px 13px 8px rgba(249,131,171,0.83));
+    }
+  }
+}
+
+@mixin slider {
+  // slider
+  .box-slider {
+    /* width: 300px; */
+    height: 165px;
+    padding: 22px;
+    background: $white;
+
+    .title-slider {
+      font-weight: 900;
+      font-size: $slider-title;
+      padding-bottom: 20px;
+      color: $black;
+    }
+
+    .content-slider {
+      font-size: $slider-content;
+      font-weight: 400;
+      letter-spacing: 0;
+      line-height: 1.2;
+    }
+  }
+}
+
+@mixin box-dark {
+  .box-body {
+    text-align: center;
+    padding-top: 80px;
+    color: $white;
+
+    h2 {
+      @extend .heading-bold;
+      padding-bottom: 30px;
+    }
+
+    p {
+      font-size: $box-content;
+      line-height: 1.7;
+    }
+
+    h2,p {
+      margin: 0 !important;
+    }
+  }
+}
+
+@mixin box-tips {
+  .path-3 {
+    position: absolute;
+    right: 130px;
+    bottom: 80px;
+
+    img {
+      @include img(200px);
+    }
+  }
+
+  .card-tips {
+    @include layout(380px, 210px);
+    position: relative;
+    margin: 0 6px 15px;
+    z-index: 2;
+    box-sizing: border-box;
+    overflow: hidden;
+    cursor: pointer;
+
+    .card-thumbnail {
+      // @include img(100%, 100%);
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      -ms-transition: opacity 0.35s, transform 0.35s;
+      -moz-transition: opacity 0.35s, transform 0.35s;
+      -webkit-transition: opacity 0.35s, -webkit-transform 0.35s;
+      transition: opacity 0.35s, transform 0.35s;
+    }
+
+    &:hover .card-thumbnail {
+      opacity: 1;
+      @include transform(scale3d(1.5,1.5,1));
+    }
+
+    .card-body {
+      @include layout(100%, auto);
+      z-index: 1;
+      position: absolute;
+      right: 0;
+      bottom: 0;
+      left: 0;
+      background: rgba(0, 0, 0, 0.5);
+      padding: 20px 30px;
+      /* flex: 1; */
+      display: flex;
+      color: $white;
+
+      p {
+        padding: 0 30px 0 0;
+        font-weight: bold;
+        font-size: 1.125rem;
+        line-height: 1.3;
+      }
+
+      .btn-tips {
+        background: $white;
+        color: $blue;
+        margin: auto 0;
+
+        &:hover {
+          @include box-shadow(0px 1px 5px 2px rgba(249,131,171,0.83));
+          color: $pinky;
+        }
+        &:active {
+          @include box-shadow(0px 1px 5px 2px rgba(249,131,171,0.83));
+          color: $pinky;
+        }
+
+        i {
+          font-size: 0.875rem;
+        }
+      }
+
+    }
+  }
+
+
+}
